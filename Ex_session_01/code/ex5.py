@@ -1,14 +1,21 @@
+JUDGES = 5
+max = 0
+min = 10
+sum = 0
+i = 0
 
-iterations=3
-MAX=0
-happenHere = 0
-while iterations>0:
-    print("N: ")
-    N = int(input())
-    if N>MAX:
-        MAX = N
-        happenHere = iterations
-    iterations-=1
-    
-    
-print("max is: ", MAX, " iteration: ", happenHere)
+while i<JUDGES:
+    vote = float(raw_input())
+    sum+=vote
+    if vote > max:
+        max = vote
+    if vote<min:
+        min = vote
+    i+=1
+
+tot = (sum - max - min) * 2
+print(tot)
+
+
+
+

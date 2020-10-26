@@ -1,13 +1,24 @@
-print("N:")
+print("n:")
+n = int(raw_input())
 
-# N = int(input())
-N = input()
+print("m:")
+m = int(raw_input())
 
-print(".....")
-while N>=0:
-    N-=1 # skip N itself, as per text and use it to decrement in loop, too
-    remainder = N % 2
-    if remainder == 0:
-        print(N)
-    
-print("done-")
+count = 0
+# stop at lower, so optimize loop:
+if m>n:
+    limit = n
+else:
+    limit = m
+
+i = 2
+while i<limit:
+    if n % i == 0 and n  % i == 0 :
+        print(i)
+        count+=1
+    i+=1
+        
+if count==0 : 
+    print("No common dividers")
+
+

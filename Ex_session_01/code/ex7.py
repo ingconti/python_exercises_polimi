@@ -1,24 +1,18 @@
-print("N:")
-N = int(input())
+#ex 7 parity
 
-print("M:")
-M = int(input())
+ODD_PARITY = 1
+EVEN_PARITY = 0
 
-count = 0
-# stop at lower,so optimize loop:
-if M>N:
-    limit = N
-else:
-    limit = M
+parity = EVEN_PARITY #let's assume even
 
-i = 2
-while i<limit:
-    if N % i == 0 and M  % i == 0 : 
-        print(i)
-        count+=1
-    i+=1
-        
-if count==0 : 
-    print("NO common dividers")
+n = int(raw_input())
+numberOf1s = 0
 
+while n>0:
+    remainder = n % 2
+    if remainder == 1:
+        numberOf1s+=1
+    n = n /2
 
+parityBit = (numberOf1s + parity) % 2
+print(parityBit)

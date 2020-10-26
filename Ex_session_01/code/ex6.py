@@ -1,11 +1,11 @@
-print("N:")
-N = int(input())
+n = int(raw_input())
+m = int(raw_input())
 
-fact = 1
-while N>1:
-    fact*=N
-    N-=1
+i = 2
+limit = 30 * 30
+while i<limit:
+    if n * n + m * m == i * i:
+        print(m, n, i)
+    i+=1
         
-    
-print("fact: ", fact)
 

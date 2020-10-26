@@ -1,24 +1,44 @@
-count = 5
-max = 0
-min = 10
-sum = 0
-i = 0
+#ex 8 temperatures
 
-while i<count:
-    print("Judge ", i+1, " vote: ")
-    vote = float(input())
-    sum+=vote
-    if vote > max:
-        max = vote
-    if vote<min:
-        min = vote
-    i+=1
+INVALID_COORD = -1.0
+SQUARE_BIG_DISTANCE = 10000000
 
-print("sum:", sum, " max: ", max, " min: " ,min)
+print("your coordinates")
+userX = float(raw_input())
+userY = float(raw_input())
 
-tot = (sum - max - min) * 2
-print("total score:", tot)
+print("number of places:")
+numberOfPlaces = int(raw_input())
+maxTemperature = -273.0  # every temperature will be heigher.
+minSquareDistance = SQUARE_BIG_DISTANCE
+nearerX = INVALID_COORD
+nearerY = INVALID_COORD
+nearerTemperature = INVALID_COORD
+indexOfNearest = 0
+indexOfHottest = 0
+n=0
+while n<numberOfPlaces:
+    print("coordinates at place " + str(n) )
+    x = float(raw_input())
+    y = float(raw_input())
+    print("temperature at place " + str(n) )
+    temperature = float(raw_input())
+    deltaX = (userX - x)
+    deltaY = (userY - y)
+    squareOfDistance = deltaX * deltaX + deltaY * deltaY
+
+    if squareOfDistance<minSquareDistance:
+        nearerX = x
+        nearerY = y
+        nearerTemperature = temperature
+        indexOfNearest = n
+        minSquareDistance = squareOfDistance
+    if temperature>maxTemperature:
+        maxTemperature = temperature
+        indexOfHottest = n
+    n+=1
 
 
-
-
+print(nearerX, nearerY, nearerTemperature)
+if indexOfNearest == indexOfHottest:
+    print(True)
