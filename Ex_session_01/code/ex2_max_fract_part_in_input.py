@@ -4,6 +4,7 @@ max = n
 max_fractional_part = n - int(n)
 i = 1
 while i < MAX_ITERATIONS:
+    n = float(raw_input())
     fractional_part = n - int(n)
     if fractional_part > max_fractional_part:
         max_fractional_part = fractional_part

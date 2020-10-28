@@ -3,9 +3,9 @@ MAX_ITERATIONS = 10
 i = 0
 while i<MAX_ITERATIONS:
     if n == 0:
-    max = 0
-    max_fractional_part = 0.0
-    happenHere = 0
+        max = 0
+        max_fractional_part = 0.0
+        happenHere = 0
 
     n = float(raw_input())
     fractional_part = n - int(n)
