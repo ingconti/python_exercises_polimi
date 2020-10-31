@@ -1,0 +1,85 @@
+
+ho messo l’introduzione già nella lezione precedente, dove ho introdotto il concetto, e gli elementi per accedere ai singoli elementi della stringa.
+ho usato anche la funzione len. 
+distribuirò il file in allegato che ho preparato in cui ci sono i metodi più comuni per le tipologie python e quindi anche quelli per le stringhe
+
+(Do per scontato utilizzare if … while ... raw_input e il for che hai suggerito)
+
+Ho alcune domande  Si/No:
+
+1) posso utilizzare acceso ad indice con le [] ?
+si
+
+2) la. f.  len() si puo’ usare?
+
+si
+
+3) per maiuscolo / minuscolo cosa possono usare? (Oppure non vanno affatto usate..)
+
+i metodi
+
+4) le f. ord() e char() mi hai detto in questi giorni che non vanno usate: vale ancora x esercitazione 2 ?
+
+le puoi usare, non mi viene in mente un esercizio interessante in cui si possano usare ...
+
+
+5) for in …  / enumerate si possono usare?
+
+
+si, sempre
+
+Sulla base delle domande sopra, assemblo un set di possibili tracce e  te le invio.
+
+
+come ci siamo detti, esempi riferiti al mondo biomedico.
+per fortuna questi non sono degli smanettoni, non li roviniamo con questo corso
+
+----
+
+Proposals:
+
+
+2.1) 
+Write a program that receives in input a string value and outputs the number of uppercase vowels it contains:
+
+2.2)
+ Function ord('A') outputs underlyng ASCII code of char 'A'.
+ Function chr(65) outputs ASCII representation 65.
+ Distance between lower and upper case of the same char is 32.
+ Write a program that receives in input a string and outputs the corresponding uppercase string.
+ 
+ 2.2.a rewrite ex 2.2 using a const to easily output uppercase/lowercase
+ 
+2.3: Write a program that asks the user a string containing only numeric chars, computing and outputting the corresponding integer value, 
+or False if input contains non-numeric characters.
+Write it without using "int()" buit-in cast.
+
+Note: '0' has asci code 48, '1' 49 and so on.
+ 
+
+--
+tRNA sequences are in a form like this:
+
+"GGGCCCGUAGCUCAGCCAGGUAGAGCGCCCGGCUCAUAACCGGGUGGUCGGGGGUUCAAAUCCCCCCGGGCCCACCA".
+
+
+Write a program that receives in input a string containing a sequence and the triplet to be found
+and outputs the number of occurrences of the triplet"
+
+example: "GGGCCCGUAGCUCAGCCAGGUAG" , "GUA"
+output: 2
+
+example: "GGGCCCGUAGCUCAGCCAGGUAG" , "GGG"
+output: 0
+
+example: "GGGCCCGUAGCUCAGCCAGGUAG" , "GGU"
+output: 1
+
+
+
+
+---
+givern 2 genomic DNA sequnces, 
+
+
+
