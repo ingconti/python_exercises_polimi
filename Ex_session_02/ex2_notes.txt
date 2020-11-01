@@ -76,10 +76,5 @@ example: "GGGCCCGUAGCUCAGCCAGGUAG" , "GGU"
 output: 1
 
 
-
-
----
-givern 2 genomic DNA sequnces, 
-
-
+--
 
