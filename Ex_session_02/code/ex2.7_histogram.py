@@ -1,7 +1,7 @@
 # Write a program that asks the user 12 integer weather temperatures for the current year, saves them in a list, computing and outputting
 # an histogram plot of values using a '*'.
-# the histogram spans from min to max degrees.
-# write the scale on left.
+# The histogram spans from min to max degrees.
+# Write the scale on left.
 
 N_OF_MONTHS = 12
 temperatures = [0] * N_OF_MONTHS

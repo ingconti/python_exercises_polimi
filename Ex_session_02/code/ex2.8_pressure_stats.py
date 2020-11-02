@@ -1,6 +1,6 @@
 # Write a program that asks the user the number of patients of his ward.
 # For every patient the program asks the surname, 10 integer measures of blood pressure (mmHg), saves them in a lists, computing and outputting
-# The name of every patient with at least a measure of pressure 10% above the average of all meausures.
+# The name of every patient with at least a measure of pressure 10% above the average of all measures.
 
 N_OF_MEASURES = 10
 patientNum = int(input())

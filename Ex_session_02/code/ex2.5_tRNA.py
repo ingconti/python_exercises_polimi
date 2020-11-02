@@ -1,11 +1,11 @@
 # tRNA sequences are in a form like this:
 
 #"GGGCCCGUAGCUCAGCCAGGUAGAGCGCCCGGCUCAUAACCGGGUGGUCGGGGGUUCAAAUCCCCCCGGGCCCACCA".
-# Write a program that receives in input a string a triplet, a string containing a sequence and outputs
+# Write a program that receives in input a string representing a triplet, a string containing a sequence and outputs
 # the number of occurrences of the given triplet.
 # don't use built-in "find" function.
 
-#example:
+# example:
 # "GUA"
 # "GGGCCCGUAGCUCAGCCAGUAG"
 # output: 2

@@ -1,8 +1,6 @@
-
-### Write a program that asks the user 10 floats representing pH,
-### saves them in a list, computing and outputting
-### a plot of values using a '.' .
-
+# Write a program that asks the user 10 floats representing pH,
+# saves them in a list, computing and outputting
+# a plot of values using a '.' .
 
 N_OF_SAMPLES = 10
 pHSamples = [0] * N_OF_SAMPLES
@@ -19,7 +17,7 @@ print (maxPH_asInt, minPH_asInt)
 
 # start from highest
 for s in range(maxPH_asInt, minPH_asInt-1, -1):
-    line = '{:0>2}'.format(s) + ": "
+    line = "
     for i in range(0, N_OF_SAMPLES):
         sampleAsInt = int(pHSamples[i])
         if sampleAsInt == s:
