@@ -1,0 +1,3 @@
+18th nov  Exercises Lists, sets, tuples and dictionaries
+
++ FILES as suppor

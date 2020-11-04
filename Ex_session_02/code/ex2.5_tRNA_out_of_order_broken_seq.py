@@ -17,7 +17,7 @@ seqLen = len(seq)
 tripletLen = len(triplet)
 
 if tripletLen % 3 == 0:
-    numtrip = 0
+	numtrip = 0
     for i in range(0, seqLen):
         y=i+3
         if y > seqLen:

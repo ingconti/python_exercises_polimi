@@ -19,8 +19,9 @@ tripletLen = len(triplet)
 if tripletLen % 3 == 0:
     numtrip = 0
     for i in range(0, seqLen, 3):
-        if seq[i:i+3] == triplet:
-            numtrip = numtrip + 1
+    	if seq[i:i+3] == triplet:
+    		numtrip = numtrip + 1
+    
     print(numtrip)
 
 else:

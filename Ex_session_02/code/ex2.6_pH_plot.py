@@ -17,7 +17,7 @@ print (maxPH_asInt, minPH_asInt)
 
 # start from highest
 for s in range(maxPH_asInt, minPH_asInt-1, -1):
-    line = "
+    line = '{:0>2}'.format(s) + ": "
     for i in range(0, N_OF_SAMPLES):
         sampleAsInt = int(pHSamples[i])
         if sampleAsInt == s:

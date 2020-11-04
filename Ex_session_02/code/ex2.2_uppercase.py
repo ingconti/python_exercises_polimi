@@ -17,6 +17,6 @@ for i in range(0, l):
         result += chr(asciiCode + LOWERCASE_TO_UPPERCASE_DELTA)
     else:
         result += chr(asciiCode)
-    i += 1
+    #i += 1
 
 print(result)
