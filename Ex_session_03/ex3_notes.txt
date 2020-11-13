@@ -1,3 +1,16 @@
 18th nov  Exercises Lists, sets, tuples and dictionaries
 
-+ FILES as suppor
++ FILES as support
+
+dictionaries:
+
+https://www.who.int/tb/country/data/download/en/
+
+
+» Download WHO TB incidence estimates disaggregated by age, sex and risk factor [0.6Mb]
+  https://extranet.who.int/tme/generateCSV.asp?ds=estimates_age_sex
+  
+  
+  sample
+  
+  https://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list
