@@ -1,0 +1,12 @@
+"country","iso2","iso3","iso_numeric","year","measure","unit","age_group","sex","risk_factor","best","lo","hi"
+"Afghanistan","AF","AFG","004",2019,"inc","num","0-14","a","all",15000,7900,22000
+"Afghanistan","AF","AFG","004",2019,"inc","num","0-14","f","all",7300,2400,12000
+"Afghanistan","AF","AFG","004",2019,"inc","num","0-14","m","all",7800,2600,13000
+"Afghanistan","AF","AFG","004",2019,"inc","num","0-4","f","all",2900,0,7200
+"Afghanistan","AF","AFG","004",2019,"inc","num","0-4","m","all",3400,0,8500
+"Afghanistan","AF","AFG","004",2019,"inc","num","15-24","f","all",7400,0,18000
+"Albania","AL","ALB","008",2019,"inc","num","0-14","a","all",13,11,15
+"Albania","AL","ALB","008",2019,"inc","num","0-14","f","all",5,4,6
+"Albania","AL","ALB","008",2019,"inc","num","0-14","m","all",8,6,10
+"Albania","AL","ALB","008",2019,"inc","num","0-4","f","all",0,0,0
+"Albania","AL","ALB","008",2019,"inc","num","0-4","m","all",5,2,7
