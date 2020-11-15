@@ -2,27 +2,41 @@ ADENINE = 'A'
 CYTOSINE = 'C'
 GUANINE = 'G'
 THYMINE = 'T'
-
 DNAELEM = ADENINE + CYTOSINE + GUANINE + THYMINE
 
+FNAME = "refseqgene.5.genomic.fna"
+#FNAME = "refseqgene.5.genomic_small.fna"
 
-FNAME = "TB_burden_age_sex_2020-11-05.csv"
-RISK_FNAME = "risks.txt"
+blocks = []
+DNACount = 0
+blockName = ""
 
-with open(RISK_FNAME) as f_risk:
-    lines = f_risk.read().splitlines()
-    riskfactors = set(lines)  # build a set.
+f = open(FNAME)
+# go line by line to save memory
+for line in f:
+    cleanedLline = line.rstrip('\r\n')  # strip out all tailing whitespace
+    #print(cleanedLline)
+    if cleanedLline.startswith('>NG_'):
+        #close previous block if present:
+        if len(blockName)>0:
+            block = {'name': blockName, 'DNACount': DNACount}
+            blocks.append(block)
+            #and clear: (we saved)
+            DNACount = 0
+        #now the new block name:
+        blockName = cleanedLline[13:]
+    else: # line with DNA
+        inRow = + cleanedLline.count(DNAELEM)
+        #print(inRow)
+        DNACount += inRow
 
-# protect against file is missing using "with":
-with open(FNAME) as f:
-    countries = set()
-    csv_reader = csv.DictReader(f)
-    list_of_rows = list(csv_reader)
-    for row in list_of_rows:
-        #print(row)
-        lo = row["lo"]
-        if lo.isdigit() and int(row["lo"])>100 : #some columns have NO data, so digit
-            countries.add(row["country"])
+#if here with name and count, add:
+if len(blockName)>0:
+   block = {'name': blockName, 'DNACount': DNACount}
+   blocks.append(block)
 
-    for c in sorted(countries):
-       print(c)
+for b in  sorted(blocks, key=lambda k: k['name']) :
+    print( '{:0>4}'.format( b["DNACount"] ), b["name"])
+
+
+
