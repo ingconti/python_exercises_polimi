@@ -1,0 +1,9 @@
+
+https://ftp.ncbi.nih.gov/refseq/H_sapiens/RefSeqGene/
+
+
+
+https://ftp.ncbi.nih.gov/refseq/H_sapiens/RefSeqGene/refseqgene.5.genomic.fna.gz
+
+expand..
+
