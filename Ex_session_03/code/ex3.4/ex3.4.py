@@ -1,6 +1,8 @@
+#non abbiamo fatto tuples ...
+
 FNAME = "visits.txt"  # TAB delimited
 
-surnames =  ()   # empty tuple (dont write:  = {} ...
+surnames =  ()   # empty tuple (don't write:  = {} ...
 firstVisits = []   # will be array of tuples
 
 def elementsFom(line):
