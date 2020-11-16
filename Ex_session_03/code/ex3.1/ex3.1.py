@@ -18,7 +18,7 @@ if lineCount > 0:
 			sum += value
 			if value >max:
 				max = value
-			if value < min:
+			elif value < min:
 				min = value
 		print(sum, max, min)
 	else:
