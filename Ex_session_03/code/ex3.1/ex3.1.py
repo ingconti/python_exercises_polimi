@@ -3,7 +3,7 @@ FNAME = "samples.csv"
 
 f=open(FNAME)
 
-lines = f.read().splitlines() #prevent be user has typed return.
+lines = f.read().splitlines() #prevent if user has typed return.
 lineCount = len(lines)
 if lineCount > 0:
 	line = lines[0]		#take first only

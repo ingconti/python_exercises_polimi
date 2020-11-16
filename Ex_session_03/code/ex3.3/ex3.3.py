@@ -1,7 +1,6 @@
 iso1 = str(input('1st ISO code '))
 iso2 = str(input('2nd ISO code '))
-
-isoSet = {iso1, iso2}  # build a set.
+isoValues = [iso1, iso2]
 
 FNAME = "TB_burden_age_sex_2020-11-05.csv"
 #FNAME = "TB_burden_reduced.csv"
@@ -20,8 +19,7 @@ if nOfLines > 0:
 		columnsValues = line.split(',')
 		a = columnsValues[columnOfISOCode]
 		b = columnsValues[columnOfSex]
-
-		if columnsValues[columnOfISOCode] in isoSet and columnsValues[columnOfSex] == 'f':
+		if columnsValues[columnOfISOCode] in isoValues and columnsValues[columnOfSex] == 'f':
 			sum = sum + int(columnsValues[columnOfBest])
 	print(sum)
 else:
