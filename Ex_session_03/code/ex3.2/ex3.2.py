@@ -11,7 +11,7 @@ def pressureFrom(stringValues):
 
 numOfPatients = len(lines)
 if numOfPatients > 0:
-	maxAveragePressure = 0
+	maxAveragePressure = 0 #no
 	indexOfPatient = 0
 	for i in range(len(lines)):
 		line = lines[i]
@@ -20,7 +20,7 @@ if numOfPatients > 0:
 		if elementsCount > 0:
 			pressures = pressureFrom(elements)
 			#print(pressures)
-			rowAvg = sum(pressures) / (elementsCount-1)
+			rowAvg = float(sum(pressures)) / (elementsCount-1)
 			if rowAvg>maxAveragePressure:
 				maxAveragePressure = rowAvg
 				indexOfPatient = i
