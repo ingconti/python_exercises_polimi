@@ -1,5 +1,6 @@
 FNAME = "patients.csv"
 SELECTED_WARDS = {"Cardiology", "Neurology"}
+P_THRESH = 680
 
 def patientDictFom(line):
     cleanedLline = line.rstrip('\r\n') # strip out all tailing whitespace
@@ -18,5 +19,5 @@ for line in f:
         patient = patientDictFom(line)
         Hgmm = patient["Hgmm"]
         ward = patient["ward"]
-        if Hgmm>680 and ward in SELECTED_WARDS:
+        if Hgmm>P_THRESH and ward in SELECTED_WARDS:
             print(patient["name"], patient["surname"])
