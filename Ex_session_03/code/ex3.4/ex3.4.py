@@ -1,6 +1,6 @@
 FNAME = "visits.txt"  # TAB delimited
 
-surnames =  ()   # empty tuple (dont write:  = {} ...
+surnames =  []
 firstVisits = []   # will be array of tuples
 
 def elementsFom(line):
@@ -8,18 +8,23 @@ def elementsFom(line):
     elems = cleanedLline.split('\t')
     return elems
 
- #go line by line to save memory
+def dictFrom(surname, date):
+    return {
+        "surname": surname,
+        "date" : date,
+    }
+
+
+#go line by line to save memory
 f = open(FNAME)
 next(f) #skip first
 for line in f:
     elems = elementsFom(line)
     (surname,date) = elems
     if surname not in surnames:
-        surnames = surnames + (surname, ) # tuples are immutable, create new ONE.
-        # note sintax-pyton 3
-        #surnames = (*surnames, surname)
-        t = (surname, date)
-        firstVisits.append(tuple(t))
+        surnames.append(surname)
+        d = dictFrom(surname, date)
+        firstVisits.append(d)
 
-for v in sorted(firstVisits):
-    print(v)
+for v in firstVisits:
+    print(v["surname"], v["date"])

@@ -1,0 +1,5 @@
+"country","iso2","iso3","iso_numeric","year","measure","unit","age_group","sex","risk_factor","best","lo","hi"
+"China, Hong Kong SAR","HK","HKG","344",2019,"inc","num","0-14","a","all",21,18,24
+"Albania","AL","ALB","008",2019,"inc","num","all","m","all",,270,400
+"Algeria","DZ","DZA","012",2019,"inc","num","0-14","a","all",2000,1500,2500
+"Zimbabwe","ZW","ZWE","716",2019,"inc","num","all","m","all",17000,11000,24000

@@ -1,7 +1,7 @@
 FNAME = "patients.csv"
 SELECTED_WARDS = {"Cardiology", "Neurology"}
 
-def patientDictFom(line):
+def patientDictFrom(line):
     cleanedLline = line.rstrip('\r\n') # strip out all tailing whitespace
     cleanedLline = cleanedLline.replace('"', '').replace(', ', ',')
     elems = cleanedLline.split(',')
@@ -15,7 +15,7 @@ f = open(FNAME)
 next(f) #skip first
 for line in f:
     if len(line)>0:
-        patient = patientDictFom(line)
+        patient = patientDictFrom(line)
         Hgmm = patient["Hgmm"]
         ward = patient["ward"]
         if Hgmm>680 and ward in SELECTED_WARDS:
