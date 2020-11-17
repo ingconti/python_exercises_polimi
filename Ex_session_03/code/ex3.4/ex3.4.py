@@ -1,10 +1,10 @@
 FNAME = "visits.txt"  # TAB delimited
 
 surnames =  []
-firstVisits = []   # will be array of tuples
+firstVisits = []
 
 def elementsFom(line):
-    cleanedLline = line.rstrip('\r\n') # strip out all tailing whitespace
+    cleanedLline = line.rstrip('\r\n') # strip out all trailing whitespace
     elems = cleanedLline.split('\t')
     return elems
 
