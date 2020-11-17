@@ -14,7 +14,7 @@ if nOfLines > 0:
 	columnOfBest =  columnsTitles.index('best')
 	columnOfISOCode = columnsTitles.index('iso2')
 	columnOfSex = columnsTitles.index('sex')
-	for i in range(1, len(lines)):
+	for i in range(1, nOfLines):
 		line = lines[i].replace('"', '')
 		columnsValues = line.split(',')
 		a = columnsValues[columnOfISOCode]

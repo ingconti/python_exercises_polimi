@@ -13,7 +13,7 @@ def averagePressureFor(line):
 	if elementsCount > 0:
 		pressures = pressuresFrom(elements)
 		# print(pressures)
-		rowAvg = sum(pressures) / (elementsCount - 1)
+		rowAvg = float( sum(pressures) / (elementsCount - 1) )
 	else:
 		rowAvg = 0
 	return rowAvg
