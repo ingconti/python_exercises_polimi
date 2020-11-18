@@ -1,19 +1,15 @@
-
 FNAME = "samples.csv"
-
 f=open(FNAME)
-
 lines = f.read().splitlines()
 lineCount = len(lines)
 if lineCount > 0:
 	line = lines[0]		#take first only
 	elementsList = line.split(',')
 	elementsCount = len(elementsList)
-	print(elementsCount)
-	sum = 0
 	if elementsCount>0:
 		max = int(elementsList[0])
 		min = int(elementsList[0])
+		sum = int(elementsList[0])
 		for i in range(1, elementsCount):
 			value = int(elementsList[i])
 			sum += value
