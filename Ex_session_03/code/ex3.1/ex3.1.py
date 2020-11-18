@@ -3,12 +3,13 @@ FNAME = "samples.csv"
 
 f=open(FNAME)
 
-lines = f.read().splitlines() #prevent if user has typed return.
+lines = f.read().splitlines()
 lineCount = len(lines)
 if lineCount > 0:
 	line = lines[0]		#take first only
 	elementsList = line.split(',')
 	elementsCount = len(elementsList)
+	print(elementsCount)
 	sum = 0
 	if elementsCount>0:
 		max = int(elementsList[0])

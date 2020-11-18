@@ -42,7 +42,7 @@ def dictFrom(line):
         dict[keys[i]] = elems[i]
     return dict
 
-def addIfNotPrersent(country, intoCountries):
+def addIfNotPresent(country, intoCountries):
     if country not in intoCountries:
         intoCountries.append(country)
 
@@ -61,7 +61,7 @@ for line in f:
         if rf in riskfactors and lo.isdigit() and int(lo)>10000:
             #some columns have NO data, so digit
 
-            addIfNotPrersent(country = d["country"], intoCountries = countries)
+            addIfNotPresent(country = d["country"], intoCountries = countries)
 
 for c in sorted(countries):
     print(c)
