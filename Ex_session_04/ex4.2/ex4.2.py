@@ -1,8 +1,9 @@
-FILE_SUFFIX = ".txt"
 MONTHS = ["January", "February", "March","April", "May", "June",
 		  "July", "August",
 		  "September", "October", "November", "December"]
 MONTHS_LEN = len(MONTHS)
+
+FILE_SUFFIX = ".txt"
 
 def buildName(bedNumber):
 	bedNumberStr = str(bedNumber)
@@ -47,13 +48,16 @@ def convertDate(s):
 def printPatientSurgeryData(lines):
 	#use  array of field names to parse rows.
 	keys = ['surname',  'name', 'surgery_date']
+	patientRecord = ""
 	for k in keys:
 		s = findDataFor(k, lines)
 		if len(s)>0: # test if we cannto find a valid field.
 			if k != "surgery_date" :
-				print(s)
+				patientRecord = patientRecord + s + " "
 			else:
-				print(convertDate(s))
+				patientRecord = patientRecord + convertDate(s) + " "
+
+	print(patientRecord)
 
 
 def process(fileName):
