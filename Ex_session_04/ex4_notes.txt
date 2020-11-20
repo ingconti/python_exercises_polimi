@@ -1,0 +1,13 @@
+
+25th nov  Exercises Subprograms
+
+
+
+da mail 19 nov 
+
+Exception and Error Handling in Python — try / except
+
+
+diventa quindi:
+
+try / except, files and subprograms
