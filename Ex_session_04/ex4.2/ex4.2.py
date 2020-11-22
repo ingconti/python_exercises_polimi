@@ -1,14 +1,16 @@
-MONTHS = ["January", "February", "March","April", "May", "June",
-		  "July", "August",
+MAX_BEDS = 10
+MONTHS = ["January", "February", "March","April",
+		  "May", "June", "July", "August",
 		  "September", "October", "November", "December"]
-MONTHS_LEN = len(MONTHS)
+MONTHS_NUM = len(MONTHS)
 
+FILE_PREFIX = "bed_"
 FILE_SUFFIX = ".txt"
 
 def buildName(bedNumber):
 	bedNumberStr = str(bedNumber)
 	if len(bedNumberStr) < 2:
-		bedNumberStr = '0' + bedNumberStr
+		bedNumberStr = FILE_PREFIX + '0' + bedNumberStr
 	fname = bedNumberStr + FILE_SUFFIX
 	return fname
 
@@ -39,7 +41,7 @@ def convertDate(s):
 	dayStr = s[8:10]
 	if monthStr.isdigit():
 		index = int(monthStr)  - 1
-		if index < MONTHS_LEN:
+		if index < MONTHS_NUM:
 			monthName = MONTHS[index]
 
 	result = yearStr + '-' + monthName + '-' + dayStr
@@ -72,7 +74,7 @@ def process(fileName):
 		return False
 
 
-for bedNumber in range(1,31):
+for bedNumber in range(1,MAX_BEDS):
 	fileName = buildName(bedNumber)
 	result = process(fileName)
 
