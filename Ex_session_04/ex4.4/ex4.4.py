@@ -12,6 +12,7 @@ def readFileLines(fileName):
 		return []
 	else:
 		lines = f.read().splitlines()
+		f.close()
 		return lines
 
 
