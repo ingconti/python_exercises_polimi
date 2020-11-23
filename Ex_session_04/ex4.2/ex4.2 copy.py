@@ -2,7 +2,7 @@ MAX_BEDS = 10
 MONTHS = ["January", "February", "March","April",
 		  "May", "June", "July", "August",
 		  "September", "October", "November", "December"]
-MONTHS_NUM = 12
+MONTHS_NUM = len(MONTHS)
 
 FILE_PREFIX = "bed_"
 FILE_SUFFIX = ".txt"
@@ -23,13 +23,13 @@ def findDataFor(fieldName, inLines):
 	found = False
 
 	while i < l and not found:
-		info = inLines[i].split(':')
-		if info[0] == fieldName:
+		(name, value) = inLines[i].split(':')
+		if name == fieldName:
 			found = True
 		else:
 			i += 1
 	if found:
-		result = info[1].strip()
+		result = value.strip()
 	return  result
 
 
@@ -53,7 +53,7 @@ def printPatientSurgeryData(lines):
 	patientRecord = ""
 	for k in keys:
 		s = findDataFor(k, lines)
-		if len(s)>0: # test if we cannot find a valid field.
+		if len(s)>0: # test if we cannto find a valid field.
 			if k != "surgery_date" :
 				patientRecord = patientRecord + s + " "
 			else:
@@ -61,19 +61,19 @@ def printPatientSurgeryData(lines):
 
 	print(patientRecord)
 
+
 def process(fileName):
 	# print('processing ', fileName)
 	try:
-		f = open(fileName)		
-	except:
-		return False
-	else:
+		f = open(fileName)
 		print('file name: ', fileName)
 		lines = f.read().splitlines()
 		printPatientSurgeryData(lines)
-		f.close()
 
-#main code:
+	except:
+		return False
+
+
 for bedNumber in range(1,MAX_BEDS):
 	fileName = buildName(bedNumber)
 	result = process(fileName)

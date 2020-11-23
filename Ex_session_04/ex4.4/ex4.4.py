@@ -3,14 +3,16 @@ N_OF_SAMPLES_KEY = "Number of samples"
 
 FILE_PREFIX = "S_"
 FILE_SUFFIX = ".gdm"
+THRESHOLD = 0.19
 
 def readFileLines(fileName):
 	try:
 		f = open(fileName)
-		lines = f.read().splitlines()
-		return lines
 	except:
 		return []
+	else:
+		lines = f.read().splitlines()
+		return lines
 
 
 def readInfoFile():
@@ -31,9 +33,15 @@ def buildFileName(index):
 
 
 def processLine(l):
-	print(l)
+	#print(l)
 	parts = l.split('\t')
-	print(len(parts))
+	#print(len(parts))
+	end = int(parts[2])
+	start = int(parts[1])
+	pValue = float(parts[10])
+	width = end - start
+	if pValue /100 > THRESHOLD:
+		print(width)
 
 def processFile(fname):
 	print(fname)
@@ -49,7 +57,7 @@ def process(nofFiles):
 	for i in range(0,nOfFiles):
 		fname = buildFileName(i)
 		processFile(fname)
-
+#main:
 nOfFiles = readInfoFile()
 if nOfFiles>0:
 	print(nOfFiles ," to be processed")

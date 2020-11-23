@@ -5,14 +5,8 @@ FEMALE = 0
 
 try:
     dataFrame = pd.read_csv(FILE_NAME)
-
-except:
-    print(False)
-
-else:
-    #columns = dataFrame.columns
+    columns = dataFrame.columns
     #print(columns)
-
     filtered = dataFrame[
         (dataFrame['cp']<2) &
         (dataFrame['sex'] == FEMALE) &
@@ -21,5 +15,8 @@ else:
     #print(filtered)
     average = filtered['age'].mean()
     print(average)
+
+except:
+       print(False)
 
 

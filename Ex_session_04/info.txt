@@ -1,0 +1,8 @@
+Average region length	56.17
+Created by	guest_new49140
+Creation date	2020/11/20 19:25:04
+Execution time	00:00:43
+Number of regions	30
+Number of samples	7
+Query name	queryname
+Size	0.02 MB
