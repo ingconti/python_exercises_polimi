@@ -5,7 +5,7 @@ FEMALE = 0
 
 try:
     dataFrame = pd.read_csv(FILE_NAME)
-    columns = dataFrame.columns
+    columns = dataFrame.columns #cosa ce ne facciamo?
     #print(columns)
     filtered = dataFrame[
         (dataFrame['cp']<2) &
