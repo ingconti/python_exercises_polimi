@@ -31,7 +31,7 @@ def processFile(fname):
 		dataFrame = pd.read_csv(fname, sep = '\t',  header = None)
 
 	except:
-		print("canot read "+ fname)
+		print("cannot read "+ fname)
 
 	else:
 		dataFrame.columns = ['chr', 'start', 'end', 'strand', 'source', 'feature',
