@@ -8,6 +8,9 @@ ADULT_FNAME       = "SA_0000001400.csv"
 
 def filterYoungDataOnYearAndSex(df, year):
 	filtered = df[ (df['YEAR'] == year) & (df['SEX'] == 'BTSX') ]
+	# now we can delete 'SEX' column:
+	wantedColumns = ['YEAR', 'COUNTRY', 'Numeric']
+	filtered = filtered[wantedColumns]
 	return filtered
 
 
@@ -18,7 +21,7 @@ def readAndReduceYoungData(year):
 		wantedColumns = ['YEAR', 'COUNTRY', 'SEX','Numeric']
 		dataFrame = dataFrame[wantedColumns]
 		dataFrame = filterYoungDataOnYearAndSex(dataFrame, year)
-
+		dataFrame.to_csv("young.csv", index=False)
 	except:
 		# return empty dataframe:
 		dataFrame = pd.DataFrame()
@@ -29,6 +32,10 @@ def readAndReduceYoungData(year):
 
 def filterAdultDataOnYearAndAlcohol(df, year):
 	filtered = df[ (df['YEAR'] == year) & (df['ALCOHOLTYPE'] == 'SA_TOTAL') ]
+	# now we can delete 'ALCOHOLTYPE' column:
+	wantedColumns = ['YEAR', 'COUNTRY', 'Numeric']
+	filtered = filtered[wantedColumns]
+
 	return filtered
 
 
@@ -40,6 +47,7 @@ def readAndReduceAdultData(forYear):
 		wantedColumns = ['YEAR','COUNTRY','ALCOHOLTYPE','Numeric']
 		dataFrame = dataFrame[wantedColumns]
 		dataFrame = filterAdultDataOnYearAndAlcohol(dataFrame, forYear)
+		dataFrame.to_csv("adult.csv",index=False)
 	except:
 		# return empty dataframe:
 		dataFrame = pd.DataFrame()
@@ -65,11 +73,11 @@ def askYear():
 # year = askYear()
 year = 2010
 young_15_19_df = readAndReduceYoungData(year)
-if young_15_19_df.count == 0:
+if young_15_19_df.empty:
 	print("no data")
 else:
 	adult_df = readAndReduceAdultData(year)
-	if adult_df.count == 0:
+	if adult_df.empty:
 		print("no data")
 	else:
 
