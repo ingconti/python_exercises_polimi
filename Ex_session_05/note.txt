@@ -5,6 +5,36 @@ https://apps.who.int/gho/athena/api/GHO
 you must perform a series of stats on WTO 
 
 
+---
+
+<<Code Label="SA_0000001760" DisplaySequence="0" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/465">
+<Attr Category="CATEGORY">
+<Value><Display>Substance use and mental health</Display></Value>
+</Attr>
+<Attr Category="DEFINITION_XML">
+<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=465</Display></Value>
+</Attr>
+<Display>15-19 years old total alcohol consumption in litres of pure alcohol</Display>
+
+--
+
+<Code Label="SA_0000001400" DisplaySequence="10" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/462">
+<Attr Category="CATEGORY">
+<Value><Display>Substance use and mental health</Display></Value>
+</Attr>
+<Attr Category="DEFINITION_XML">
+<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=462</Display></Value>
+</Attr>
+<Display>Alcohol, recorded per capita (15+) consumption (in litres of pure alcohol)</Display>
+
+
+
+merge / cartesian product
+
+https://pandas.pydata.org/pandas-docs/version/0.22.0/merging.html
+
+
+
 --
 Deaths due to malaria (per 100 000 population)
 
@@ -44,13 +74,6 @@ curl "https://apps.who.int/gho/athena/api/GHO/MDG_0000000016?format=csv">MDG_000
 
 ----
 
-POPULATION
-
-https://datahub.io/JohnSnowLabs/population-figures-by-country
-
-https://datahub.io/JohnSnowLabs/population-figures-by-country/r/population-figures-by-country-csv.csv
-
-
 ISO CODE:
 
 https://stefangabos.github.io/world_countries/
@@ -60,7 +83,11 @@ are in lowercase
 
 
 
---
+POPULATION
+
+https://datahub.io/JohnSnowLabs/population-figures-by-country
+
+https://datahub.io/JohnSnowLabs/population-figures-by-country/r/population-figures-by-country-csv.csv
 
 
 
@@ -87,29 +114,6 @@ are in lowercase
 </Attr>
 <Display>Exposure to smoke at home</Display>
 </Code>
-
----
-
-<<Code Label="SA_0000001760" DisplaySequence="0" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/465">
-<Attr Category="CATEGORY">
-<Value><Display>Substance use and mental health</Display></Value>
-</Attr>
-<Attr Category="DEFINITION_XML">
-<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=465</Display></Value>
-</Attr>
-<Display>15-19 years old total alcohol consumption in litres of pure alcohol</Display>
-
---
-
-<Code Label="SA_0000001400" DisplaySequence="10" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/462">
-<Attr Category="CATEGORY">
-<Value><Display>Substance use and mental health</Display></Value>
-</Attr>
-<Attr Category="DEFINITION_XML">
-<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=462</Display></Value>
-</Attr>
-<Display>Alcohol, recorded per capita (15+) consumption (in litres of pure alcohol)</Display>
-
 
 
 -----
