@@ -78,17 +78,6 @@ def showDiagram(dataframe):
 	plt.show()
 
 
-def askYear():
-	ok = False
-	while ok == False:
-		year = input("type an year ")
-		ok = year.isdigit()
-		if ok == False:
-			print("wrong input")
-
-	return year
-
-
 def replaceISOCode(df):
 	try:
 		ISO_dataFrame = pd.read_csv(ISO_FNAME)
@@ -107,9 +96,20 @@ def replaceISOCode(df):
 
 
 
+def askYear():
+	ok = False
+	while ok == False:
+		year = input("type an year ")
+		ok = year.isdigit()
+		if ok == False:
+			print("wrong input")
+
+	return int(year)
+
+
 #main code:
-# year = askYear()
 year = 2010
+#year = askYear()
 young_15_19_df = readAndReduceYoungData(year)
 if young_15_19_df.empty:
 	print("no data")
