@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 YOUNG_15_19_FNAME = "SA_0000001760.csv"
 ADULT_FNAME       = "SA_0000001400.csv"
@@ -63,10 +65,17 @@ def mergeAndAddDelta(young_15_19_df, adult_df):
 
 	merged = pd.merge(young_15_19_df, adult_df, on='COUNTRY')
 	merged.columns = ['COUNTRY','Numeric_Young','Numeric_Adult'];
+	merged = merged[merged['Numeric_Adult'] > 1.3 * merged['Numeric_Young'] ]
 	#add columns:
-	merged['delta'] = merged['Numeric_Young'] - merged['Numeric_Adult']
+	merged['delta'] = merged['Numeric_Adult'] - merged['Numeric_Young']
 	merged.to_csv("cartesian.csv", index=False)
 	return merged
+
+
+def showDiagram(dataframe):
+	dataframe.plot(kind = 'bar', x='name', y= 'delta')
+	plt.xticks(fontsize=7)
+	plt.show()
 
 
 def askYear():
@@ -78,6 +87,7 @@ def askYear():
 			print("wrong input")
 
 	return year
+
 
 def replaceISOCode(df):
 	try:
@@ -109,5 +119,6 @@ else:
 		print("no data")
 	else:
 		merged = mergeAndAddDelta(young_15_19_df, adult_df)
-		replaceISOCode(merged)
+		with_ISO = replaceISOCode(merged)
+		showDiagram(with_ISO)
 		print("done")
