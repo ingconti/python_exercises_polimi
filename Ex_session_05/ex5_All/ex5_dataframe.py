@@ -2,14 +2,15 @@ import pandas as pd
 
 YOUNG_15_19_FNAME = "SA_0000001760.csv"
 ADULT_FNAME       = "SA_0000001400.csv"
+ISO_FNAME         = "countries.csv"
 
 
 # 15 / 19:
 
 def filterYoungDataOnYearAndSex(df, year):
 	filtered = df[ (df['YEAR'] == year) & (df['SEX'] == 'BTSX') ]
-	# now we can delete 'SEX' column:
-	wantedColumns = ['YEAR', 'COUNTRY', 'Numeric']
+	# now we can delete 'SEX' column, and year, too:
+	wantedColumns = ['COUNTRY', 'Numeric']
 	filtered = filtered[wantedColumns]
 	return filtered
 
@@ -32,8 +33,8 @@ def readAndReduceYoungData(year):
 
 def filterAdultDataOnYearAndAlcohol(df, year):
 	filtered = df[ (df['YEAR'] == year) & (df['ALCOHOLTYPE'] == 'SA_TOTAL') ]
-	# now we can delete 'ALCOHOLTYPE' column:
-	wantedColumns = ['YEAR', 'COUNTRY', 'Numeric']
+	# now we can delete 'ALCOHOLTYPE' column,, and year, too:
+	wantedColumns = ['COUNTRY', 'Numeric']
 	filtered = filtered[wantedColumns]
 
 	return filtered
@@ -55,6 +56,17 @@ def readAndReduceAdultData(forYear):
 	return dataFrame
 
 
+def mergeAndAddDelta(young_15_19_df, adult_df):
+	# as both dataframe have the same "Numeric" value, we change thewm on fly
+	# (not needed but more readable: if we don not rename, we will get:
+	# COUNTRY,Numeric_x,Numeric_y as columns name
+
+	merged = pd.merge(young_15_19_df, adult_df, on='COUNTRY')
+	merged.columns = ['COUNTRY','Numeric_Young','Numeric_Adult'];
+	#add columns:
+	merged['delta'] = merged['Numeric_Young'] - merged['Numeric_Adult']
+	merged.to_csv("cartesian.csv", index=False)
+	return merged
 
 
 def askYear():
@@ -66,6 +78,22 @@ def askYear():
 			print("wrong input")
 
 	return year
+
+def replaceISOCode(df):
+	try:
+		ISO_dataFrame = pd.read_csv(ISO_FNAME)
+		ISO_dataFrame['alpha3'] = ISO_dataFrame['alpha3'].str.upper()
+
+		dataFrame = pd.merge(df, ISO_dataFrame, left_on='COUNTRY', right_on='alpha3')
+
+		# strip un neede columns:
+		wantedColumns = ['name', 'delta']
+		dataFrame = dataFrame[wantedColumns]
+	except:
+		# return empty dataframe:
+		dataFrame = pd.DataFrame()
+
+	return dataFrame
 
 
 
@@ -80,5 +108,6 @@ else:
 	if adult_df.empty:
 		print("no data")
 	else:
-
+		merged = mergeAndAddDelta(young_15_19_df, adult_df)
+		replaceISOCode(merged)
 		print("done")
