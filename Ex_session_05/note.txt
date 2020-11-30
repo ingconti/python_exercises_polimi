@@ -1,14 +1,67 @@
 https://apps.who.int/gho/athena/api/GHO
 
 
+---
+you must perform a series of stats on WTO 
 
-<Code Label="MDG_0000000001" DisplaySequence="2" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/1">
 
-Infant mortality rate (probability of dying between birth and age 1 per 1000 live births)
+--
+Deaths due to malaria (per 100 000 population)
+
+
+<Code Label="MDG_0000000016" DisplaySequence="16" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/16">
+<Attr Category="IMR_ID">
+<Value><Display>16</Display></Value>
+</Attr>
+<Attr Category="CATEGORY">
+<Value><Display>Millennium Development Goals (MDGs)</Display></Value>
+</Attr>
+<Attr Category="DEFINITION_XML">
+<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=16</Display></Value>
+</Attr>
+<Display>Deaths due to malaria (per 100 000 population)</Display>
+</Code>
+
+
+CURL:
+curl "https://apps.who.int/gho/athena/api/GHO/MDG_0000000016?format=csv">MDG_0000000016.csv
 
 
 ---
-you must perform a series of stats on WTO 
+<Display>Number of deaths due to tuberculosis, excluding HIV</Display>
+
+
+<Code Label="TB_e_mort_exc_tbhiv_num" DisplaySequence="0" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/1425">
+<Attr Category="CATEGORY">
+<Value><Display>Tuberculosis</Display></Value>
+</Attr>
+<Attr Category="DEFINITION_XML">
+<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=1425</Display></Value>
+</Attr>
+<Display>Number of deaths due to tuberculosis, excluding HIV</Display>
+</Code>
+
+
+----
+
+POPULATION
+
+https://datahub.io/JohnSnowLabs/population-figures-by-country
+
+https://datahub.io/JohnSnowLabs/population-figures-by-country/r/population-figures-by-country-csv.csv
+
+
+ISO CODE:
+
+https://stefangabos.github.io/world_countries/
+
+are in lowercase
+
+
+
+
+--
+
 
 
 ---
@@ -37,7 +90,7 @@ you must perform a series of stats on WTO
 
 ---
 
-<Code Label="SA_0000001760_ARCHIVED" DisplaySequence="0" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/465">
+<<Code Label="SA_0000001760" DisplaySequence="0" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/465">
 <Attr Category="CATEGORY">
 <Value><Display>Substance use and mental health</Display></Value>
 </Attr>
@@ -45,7 +98,19 @@ you must perform a series of stats on WTO
 <Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=465</Display></Value>
 </Attr>
 <Display>15-19 years old total alcohol consumption in litres of pure alcohol</Display>
-</Code>
+
+--
+
+<Code Label="SA_0000001400" DisplaySequence="10" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/462">
+<Attr Category="CATEGORY">
+<Value><Display>Substance use and mental health</Display></Value>
+</Attr>
+<Attr Category="DEFINITION_XML">
+<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=462</Display></Value>
+</Attr>
+<Display>Alcohol, recorded per capita (15+) consumption (in litres of pure alcohol)</Display>
+
+
 
 -----
 
@@ -56,52 +121,6 @@ you must perform a series of stats on WTO
 <Attr Category="CATEGORY">
 <Display>Minimum legal drinking age</Display>
 </Code>
-
-
---
-<Code Label="MDG_0000000016" DisplaySequence="16" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/16">
-<Attr Category="IMR_ID">
-<Value><Display>16</Display></Value>
-</Attr>
-<Attr Category="CATEGORY">
-<Value><Display>Millennium Development Goals (MDGs)</Display></Value>
-</Attr>
-<Attr Category="DEFINITION_XML">
-<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=16</Display></Value>
-</Attr>
-<Display>Deaths due to malaria (per 100 000 population)</Display>
-</Code>
-
-
-CURL:
-curl "https://apps.who.int/gho/athena/api/GHO/MDG_0000000016?format=csv">MDG_0000000016.csv
-
-
---
-
-
-<Code Label="TB_e_mort_exc_tbhiv_num" DisplaySequence="0" URL="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/1425">
-<Attr Category="CATEGORY">
-<Value><Display>Tuberculosis</Display></Value>
-</Attr>
-<Attr Category="DEFINITION_XML">
-<Value><Display>http://apps.who.int/gho/indicatorregistryservice/publicapiservice.asmx/IndicatorGetAsXml?profileCode=WHO&amp;applicationCode=System&amp;languageAlpha2=en&amp;indicatorId=1425</Display></Value>
-</Attr>
-<Display>Number of deaths due to tuberculosis, excluding HIV</Display>
-</Code>
-
-
-----
-
-POPULATION
-
-https://datahub.io/JohnSnowLabs/population-figures-by-country
-
-https://datahub.io/JohnSnowLabs/population-figures-by-country/r/population-figures-by-country-csv.csv
-
-
-
-
 
 
 
