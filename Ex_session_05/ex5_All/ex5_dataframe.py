@@ -59,7 +59,7 @@ def readAndReduceAdultData(forYear):
 
 
 def mergeAndAddDelta(young_15_19_df, adult_df):
-	# as both dataframe have the same "Numeric" value, we change thewm on fly
+	# as both dataframe have the same "Numeric" value, we change them on fly
 	# (not needed but more readable: if we don not rename, we will get:
 	# COUNTRY,Numeric_x,Numeric_y as columns name
 
@@ -85,7 +85,7 @@ def replaceISOCode(df):
 
 		dataFrame = pd.merge(df, ISO_dataFrame, left_on='COUNTRY', right_on='alpha3')
 
-		# strip un neede columns:
+		# strip un-needed columns:
 		wantedColumns = ['name', 'delta']
 		dataFrame = dataFrame[wantedColumns]
 	except:
@@ -108,8 +108,8 @@ def askYear():
 
 
 #main code:
-year = 2010
 #year = askYear()
+year = 2010
 young_15_19_df = readAndReduceYoungData(year)
 if young_15_19_df.empty:
 	print("no data")
